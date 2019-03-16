@@ -1,5 +1,13 @@
 Study https://www.jessesadler.com/post/network-analysis-with-r/
 
+packages: tidyverse - manipulating data to be edge list and node list
+          network - Construct, coerce to, test for and print network objects. Using plot() to plot network objects.
+          igraph - Construct igraph objects. Using plot() to plot igraph objects.
+          better to use network and igraph in a seperate environment, otherwise they might interfere with each other.
+
+          for interactive graph
+          visNetwork
+
 
 -An adjacency matrix is a square matrix in which the column and row names are the nodes of the network. 
  Within the matrix a 1 indicates that there is a connection between the nodes, and a 0 indicates no connection. 
@@ -19,8 +27,9 @@ e.g    1 2 3
    1
    2
 
-
-
 -Directed network: the distinction between source and target is meaningful.
  If the edges have a magnitude attribute the graph is considered weighted.
  
+-default plot()
+ generating plot base on edge list and the shape of plot is random. Repeating running plot() function n times may 
+ probably gets n different shape.
