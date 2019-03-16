@@ -1,1 +1,26 @@
-getting some datasets and try to do something in R
+Study https://www.jessesadler.com/post/network-analysis-with-r/
+
+
+-An adjacency matrix is a square matrix in which the column and row names are the nodes of the network. 
+ Within the matrix a 1 indicates that there is a connection between the nodes, and a 0 indicates no connection. 
+e.g    1 2 3 
+     1 0 1 1 
+     2 1 0 0 
+     
+ Relationship: from 1 to 2, from 1 to 3, from 2 to 1.
+
+-Edge list: source target attribute(weight)
+  from  to
+   1     2
+   1     3
+   2     1
+-Node list
+   Node
+   1
+   2
+
+
+
+-Directed network: the distinction between source and target is meaningful.
+ If the edges have a magnitude attribute the graph is considered weighted.
+ 
