@@ -6,7 +6,8 @@ packages: tidyverse - manipulating data to be edge list and node list
           better to use network and igraph in a seperate environment, otherwise they might interfere with each other.
 
           for interactive graph
-          visNetwork
+          -visNetwork
+          -networkD3
 
 
 -An adjacency matrix is a square matrix in which the column and row names are the nodes of the network. 
@@ -33,3 +34,8 @@ e.g    1 2 3
 -default plot()
  generating plot base on edge list and the shape of plot is random. Repeating running plot() function n times may 
  probably gets n different shape.
+
+-interactive network graph
+ "visNetwork" seems to be a easier way to draw a simple network graph 
+ visNetwork(node tibble/dataframe, edge tibble/dataframe)
+ 
