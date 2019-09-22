@@ -1,0 +1,35 @@
+---
+title: "Dissertation"
+author: "Lushi Cai, ID 112712151"
+date: "21/09/2019"
+output:
+  html_document: default
+runtime: shiny_prerendered
+---
+
+# Design of my app
+
+The app is designed for visualizing network data. There are two sections in this app. A set of appearance control locates on the left and the graph will be displayed in the main panel. There are nine layouts provided and most of dataset can be represented well by one of these layouts. By using this interface, users can custom the appearance of the graph and find a suitable layout to explore the information containing in the data from the graph structure.
+
+There are five submenus in the side panel: File, Data, Node, Connection and Titles and Labels. When ticking those buttons, a few controls corresponding to the submenus will uncollapse. On the other hand, untiking the buttons will collapse the controls. User can import the edge dataset and node dataset from their local drive under File. Data can be removed. The controls under Data help us to select fewer rows from the original data and display it. If "value" column is in the edge data, then user can select the rows with how large the value they want to up to. The unit is percentage and the default is 5%, which means the default setting will sort the data by value first and then select the top 5% value in the data. On the other hand, if "value" column is missing, then the selection is bsaed on the degree of each node. Here, the concept of degree is worth to introduce. Degree is frequently used in graph theory. Degree is the number of edges having a node as end point. For example, if we have a connecting to b and b connecting to c, then the degrees of a, b, c are 2, 1, 0 respectively. Using degree as criterion allows us to build the graph with most important nodes so that we might catch importance message from the data.
+
+The controls under Node and Connection are for maniputating the appearance of the graphs. All control work on default, hierarchy, tree, circle, sphere, on grid graph and some of them work on 3D, arc line. Node color works across the layouts except sankey graph and it provides a color palette for picking a color. If users want to classify groups by different colors then users can choose a variable containing group information. Then the option of color palette will hide and if color by variable is none, color palette turns up. Same as shape and shape by variable. There are 12 shapes: dot, ellipse, box, circle, database, diamond, square, star, text, triangle, triangleDown, icon. Cluster is an important feature in graph and we do not want to miss out. Cluster shows internal structure of data. The default color is blue and the defualt shape is dot. Node transparency ranges from 0 to 1 with 0 indicating non-transparent and 1 indicating transparent. The shadow of node is on by default and the transparency of shadow can be adjusted. When hovering the nodes, all edges connecting to that node will be highlighted because the default setting is 1. User can custom the number of degree to be displayed. Futhermore, the transparency of non-highlighted node can be adjusted. In terms of connectIon, the arrow points to destination by default and the options that points to source node or both direction are available. Color palette for connection color works across the layouts except sankey graph. The connections can be styled to dash line and they can be set to fully invisble.
+
+Titles, sub titles and footers are available except 
+
+
+
+
+
+
+
+
+
+
+
+
+Here we can import our daataset
+```{R}
+fileInput("edgefile","Upload Connection File",accept = c('text/csv',  
+                                                                            'text/comma-separated-values,text/plain', '.csv'))
+```
