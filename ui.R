@@ -106,14 +106,28 @@ ui <- (
     mainPanel(fluidPage(
       tabsetPanel(
         tabPanel("Dataset",uiOutput("datatab")),
-        tabPanel("Vertices-Edges Graph", uiOutput("Tab1")),
-        tabPanel("3D Graph",
+        #tabPanel("Vertices-Edges Graph", uiOutput("Tab1")),
+        #uiOutput("Tab1"),
+        tabPanel("Default",
+                 fluidRow(
+                   column(2,checkboxInput("configuration1", label="More controls below", value = FALSE,width='200%')),
+                   column(7,selectInput("algorithm", "Layout Algorithm",width="200px", choices = c("Interactive Kamada-Kawai","Fruchterman-Reingold","Davidson-Harel","DrL graph"
+                                                                                                   ,"GEM","Kamada-Kawai",
+                                                                                                   "Multidimensional scaling","Sugiyama graph","graphopt","Large")))
+                 ),
+                 visNetworkOutput("network_random" ,height = "1000px",width = "800px" )),
+        tabPanel("Hierarchy",checkboxInput("configuration2", label="More controls below", value = FALSE),visNetworkOutput("network_hierarchy",height = "600px",width = "800px")),
+        tabPanel("Tree",checkboxInput("configuration3", label="More controls below", value = FALSE),visNetworkOutput("network_tree",height = "600px",width = "800px")),
+        tabPanel("Circle",checkboxInput("configuration4", label="More controls below", value = FALSE),visNetworkOutput("network_circle",height = "600px",width = "800px")),
+        tabPanel("Sphere",checkboxInput("configuration5", label="More controls below", value = FALSE),visNetworkOutput("network_sphere",height = "600px",width = "800px")),
+        tabPanel("On Grid",checkboxInput("configuration6", label="More controls below", value = FALSE),visNetworkOutput("network_grid",height = "600px",width = "800px")),
+        tabPanel("3D",
                  selectInput("algorithm3d", "Layout Algorithm",width="200px", choices = c("Random","On Grid","Fruchterman-Reingold"
                                                                                         ,"Kamada-Kawai",
                                                                                         "Drl Graph")),
                  scatterplotThreeOutput("i3d",  height = "600px", width = "800px")),
         tabPanel(
-          "Arc Graph",
+          "Arc line",
           sliderInput(
             "labelopacity",
             "Transparency of Labels",
@@ -132,7 +146,8 @@ ui <- (
           
         ),
         tabPanel(
-          "Sankey Graph",
+          "Sankey
+          ",
           sankeyNetworkOutput("sankey", height = "1200px", width = "800px"),
           textOutput("s"),
           tags$head(

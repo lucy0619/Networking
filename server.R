@@ -644,23 +644,24 @@ function(input, output,session) {
     networkD3::sankeyNetwork(Links = subedge, Nodes = node1, Source = 'from',Target = 'to', Value = 'value',iterations = 0,NodeID = 'id',fontSize = 12)
   })
   
-  output$Tab1 <- renderUI({
-    tabsetPanel(id = "layout", 
-                tabPanel("Default",
-                         fluidRow(
-                         column(2,checkboxInput("configuration1", label="More controls below", value = FALSE,width='200%')),
-                         column(7,selectInput("algorithm", "Layout Algorithm",width="200px", choices = c("Interactive Kamada-Kawai","Fruchterman-Reingold","Davidson-Harel","DrL graph"
-                                                                                  ,"GEM","Kamada-Kawai",
-                                                                                  "Multidimensional scaling","Sugiyama graph","graphopt","Large")))
-                         ),
-                         visNetworkOutput("network_random" ,height = "1000px",width = "800px" )),
-                tabPanel("Hierarchy",checkboxInput("configuration2", label="More controls below", value = FALSE),visNetworkOutput("network_hierarchy",height = "600px",width = "800px")),
-                tabPanel("Tree",checkboxInput("configuration3", label="More controls below", value = FALSE),visNetworkOutput("network_tree",height = "600px",width = "800px")),
-                tabPanel("Circle",checkboxInput("configuration4", label="More controls below", value = FALSE),visNetworkOutput("network_circle",height = "600px",width = "800px")),
-                tabPanel("Sphere",checkboxInput("configuration5", label="More controls below", value = FALSE),visNetworkOutput("network_sphere",height = "600px",width = "800px")),
-                tabPanel("On Grid",checkboxInput("configuration6", label="More controls below", value = FALSE),visNetworkOutput("network_grid",height = "600px",width = "800px"))
-    )
-  })
+ #  output$Tab1 <- renderUI({
+ # #  tabsetPanel(id = "layout", 
+ #    
+ #                tabPanel("Default",
+ #                         fluidRow(
+ #                         column(2,checkboxInput("configuration1", label="More controls below", value = FALSE,width='200%')),
+ #                         column(7,selectInput("algorithm", "Layout Algorithm",width="200px", choices = c("Interactive Kamada-Kawai","Fruchterman-Reingold","Davidson-Harel","DrL graph"
+ #                                                                                  ,"GEM","Kamada-Kawai",
+ #                                                                                  "Multidimensional scaling","Sugiyama graph","graphopt","Large")))
+ #                         ),
+ #                         visNetworkOutput("network_random" ,height = "1000px",width = "800px" ))
+ #                tabPanel("Hierarchy",checkboxInput("configuration2", label="More controls below", value = FALSE),visNetworkOutput("network_hierarchy",height = "600px",width = "800px"))
+ #                tabPanel("Tree",checkboxInput("configuration3", label="More controls below", value = FALSE),visNetworkOutput("network_tree",height = "600px",width = "800px"))
+ #                tabPanel("Circle",checkboxInput("configuration4", label="More controls below", value = FALSE),visNetworkOutput("network_circle",height = "600px",width = "800px"))
+ #                tabPanel("Sphere",checkboxInput("configuration5", label="More controls below", value = FALSE),visNetworkOutput("network_sphere",height = "600px",width = "800px"))
+ #                tabPanel("On Grid",checkboxInput("configuration6", label="More controls below", value = FALSE),visNetworkOutput("network_grid",height = "600px",width = "800px"))
+ #   )
+ #  })
   
 
   
